@@ -1,1 +1,2 @@
 # HR-management-system
+We created in the lab today two HTML pages, as for JavaScript, we created a constructor to generate an employee object and we calculated the net salay for the employees depending on the employee level.
