@@ -1,23 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <style>
+* {
+  box-sizing: border-box;
+}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+
+input[type=submit] {
+  background-color:purple;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .col-25, .col-75, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+    </style>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Page</title>
+    <link rel ="stylesheet" href="./styles.css">
 </head>
-<link rel ="stylesheet" href="./styles.css">
 <body>
-    <ul>
+      <ul>
+        <div class="topnav">
         <li><a class="active" href="index.html">Home</a></li>
         <li><a href="accounting.html">About</a></li>
       </ul>
-        <header></header>
-        <main>
-            <div class = "box">
-            <script calss="box" src="app.js">
-                 </script> 
-                 </div>
+      <header id="myHeader"></header>
+      <main>
+        <div class="box2">
+        <section>
+        <h2>HR MANAGEMENT SYSTEM</h2>
+      </section>
+      <section id = "cardSection">
+        <form id="employeesForm">
+
+            <div class="input-container2">
+            <fieldset>
+              <legend>Adding New Employee</legend>
+              <label for="">The employee's full name:</label>
+              <div class="main-content"></div>
+              <input type="text" id="employeeName" name="employeeName" placeholder="please enter a employee name"/><br/>
+                </div>
+              
+              <p>Select the section from the following options:</p>
+              <div class="select-container2">
+              <input type="checkbox" id="administration" name="administration" value="administration"/>
+              <label for="administration">Administration</label>
+              <br/>
+              <input type="checkbox" id="marketing" name="marketing" value="marketing"/>
+              <label for="marketing">Marketing</label>
+              <br/>
+              <input type="checkbox" id="development" name="development" value="development"/>
+              <label for="development">Development</label>
+              <br/>
+              <input type="checkbox" id="finance" name="finance" value="finance"/>
+              <label for="finance">Finance</label>
+              <br/>
+            </div>
+
+              <p>Select the level from the following options:</p>
+              <div class="select-container2">
+              <input type="checkbox" id="junior" name="junior" value="junior"/>
+              <label for="junior">Junior</label>
+              <br/>
+              <input type="checkbox" id="midSenior" name="midSenior" value="midSenior"/>
+              <label for="midSenior">Mid-Senior</label>
+              <br/>
+              <input type="checkbox" id="senior" name="senior" value="senior"/>
+              <label for="senior">Senior</label><br/>
+              </div>
+
+              <div class="input-container2">
+              <label for="img">Image Link:</label>
+              <input type="text" id="img" name="img"/><br/>
+              </div>
+              <input type="submit" class="btn" name="" id="" value="Add New Employee"/>
+            </fieldset>
+            </form>
+      </section>
+      <span class="text3">Employees' list</span>
+        <div class="flex-container" id="marketing-dept"></div>
+        <div class="flex-container" id="development-dept"></div>
+        <div class="flex-container" id="finance-dept"></div>
+        <div class="flex-container" id="admin-dept"></div>
+        <div><section id="cardSection"></section></div>
         </main>
         <footer>
             <div class="copyright">
@@ -27,5 +146,6 @@
             <a href="https://www.instagram.com/"><img id = instagram src="ins.webp" alt="instgram"></a>
         </div>
         </footer>
+        <script calss="box" src="app.js"></script>
 </body>
 </html>
