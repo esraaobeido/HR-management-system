@@ -53,7 +53,7 @@ input[type=submit]:hover {
 
 /* Clear floats after the columns */
 .row::after {
-  content: "";
+  content:icon;
   display: table;
   clear: both;
 }
@@ -84,68 +84,67 @@ input[type=submit]:hover {
         <section>
         <h2>HR MANAGEMENT SYSTEM</h2>
       </section>
-      <section id = "cardSection">
+      <section>
         <form id="employeesForm">
-
             <div class="input-container2">
             <fieldset>
               <legend>Adding New Employee</legend>
               <label for="">The employee's full name:</label>
               <div class="main-content"></div>
               <input type="text" id="employeeName" name="employeeName" placeholder="please enter a employee name"/><br/>
-                </div>
-              
+              </div>
               <p>Select the section from the following options:</p>
               <div class="select-container2">
-              <input type="checkbox" id="administration" name="administration" value="administration"/>
+              <input type="radio" id="administration" name="depa" value="administration"/>
               <label for="administration">Administration</label>
               <br/>
-              <input type="checkbox" id="marketing" name="marketing" value="marketing"/>
+              <input type="radio" id="marketing" name="depa" value="marketing"/>
               <label for="marketing">Marketing</label>
               <br/>
-              <input type="checkbox" id="development" name="development" value="development"/>
+              <input type="radio" id="development" name="depa" value="development"/>
               <label for="development">Development</label>
               <br/>
-              <input type="checkbox" id="finance" name="finance" value="finance"/>
+              <input type="radio" id="finance" name="depa" value="finance"/>
               <label for="finance">Finance</label>
               <br/>
-            </div>
-
+              </div>
               <p>Select the level from the following options:</p>
               <div class="select-container2">
-              <input type="checkbox" id="junior" name="junior" value="junior"/>
+              <form action="/action_page.php">
+              <input type="radio" id="junior" name="lev" value="junior"/>
               <label for="junior">Junior</label>
               <br/>
-              <input type="checkbox" id="midSenior" name="midSenior" value="midSenior"/>
+              <input type="radio" id="midSenior" name="lev" value="midSenior"/>
               <label for="midSenior">Mid-Senior</label>
               <br/>
-              <input type="checkbox" id="senior" name="senior" value="senior"/>
+              <input type="radio" id="senior" name="lev" value="senior"/>
               <label for="senior">Senior</label><br/>
               </div>
-
               <div class="input-container2">
               <label for="img">Image Link:</label>
               <input type="text" id="img" name="img"/><br/>
               </div>
               <input type="submit" class="btn" name="" id="" value="Add New Employee"/>
             </fieldset>
-            </form>
+        </form>
       </section>
       <span class="text3">Employees' list</span>
+      <div>
         <div class="flex-container" id="marketing-dept"></div>
         <div class="flex-container" id="development-dept"></div>
         <div class="flex-container" id="finance-dept"></div>
         <div class="flex-container" id="admin-dept"></div>
         <div><section id="cardSection"></section></div>
+        </div> 
         </main>
         <footer>
             <div class="copyright">
-            <p1>©2009@contact info</p1>
+            <p1>©2009@Contact Info</p1>
             <a href="https://twitter.com/Twitter"><img id = twitter src="tw.webp" alt="twitter"></a>
             <a href="https://www.facebook.com/"><img id = facebook src="fb.png" alt="facebook"></a>
             <a href="https://www.instagram.com/"><img id = instagram src="ins.webp" alt="instgram"></a>
         </div>
         </footer>
-        <script calss="box" src="app.js"></script>
+    <script calss="box" src="app.js"></script>
 </body>
 </html>
