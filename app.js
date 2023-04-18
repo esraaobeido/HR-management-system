@@ -1,5 +1,6 @@
 'use strict';
-function Employee (employeeId, fullName, department, level, imageUrl){
+
+function Employee(employeeId, fullName, department, level, imageUrl){
     this.employeeId = employeeId;
     this.fullName = fullName;
     this.department = department;
@@ -7,60 +8,61 @@ function Employee (employeeId, fullName, department, level, imageUrl){
     this.imageUrl = imageUrl;
 }
 
-let seniorSalary;
-let midSeniorSalary;
-let juniorSalary;
-let netSeniorSalary;
-let netMidSeniorSalary;
-let netJuniorSalary;
+let empArr = [];
 
 Employee.prototype.salary = function(level){
+    let randomSalary = 0;
     let tax = 0.075;
-
     if(level == 'Senior'){
         let min = 1500;
         let max = 2000;
-        seniorSalary = Math.floor(Math.random() * (max - min + 1) + min);
-        netSeniorSalary = seniorSalary - (seniorSalary * tax);
-        document.write(this.fullName + ", Salary = " + netSeniorSalary + '</p>');
+        randomSalary = Math.floor(Math.random() * (max - min + 1)) + min;
+        this.salary = randomSalary-randomSalary * tax;
 
 
     } else if(level == 'Mid-Senior'){
         let min = 1000;
         let max = 1500;
-        midSeniorSalary = Math.floor(Math.random() * (max - min + 1) + min);
-        netMidSeniorSalary = midSeniorSalary - (midSeniorSalary * tax);
-        document.write(this.fullName + ", Salary = " + netMidSeniorSalary + '</p>');
+        randomSalary = Math.floor(Math.random() * (max - min + 1)) + min;
+        this.salary = randomSalary-randomSalary * tax;
 
            
     } else if(level == 'Junior'){
         let min = 500;
         let max = 1000;
-        juniorSalary = Math.floor(Math.random() * (max - min + 1) + min);
-        netJuniorSalary = juniorSalary - (juniorSalary * tax);
-        document.write(this.fullName + ", Salary = " + netJuniorSalary + '</p>');
+        randomSalary = Math.floor(Math.random() * (max - min + 1)) + min;
+        this.salary = randomSalary-randomSalary * tax;
 
     }
+}
+Employee.prototype.render = function(){
+    document.write(`Name : ${this.fullName} <br> Salary = ${this.salary} <br><br>`);
+
 }
 
 
 let ghaziSamer = new Employee(1000, 'Ghazi Samer','Administration', 'Senior');
-ghaziSamer.salary(ghaziSamer.level);
+empArr.push(ghaziSamer);
 
 let lanaAli = new Employee(1001, 'Lana Ali', 'Fainance', 'Senior');
-lanaAli.salary(lanaAli.level);
+empArr.push(lanaAli);
 
 let tamaraAyoub = new Employee(1002, 'Tamara Ayoub', 'Marketing', 'Senior');
-tamaraAyoub.salary(tamaraAyoub.level);
+empArr.push(tamaraAyoub);
 
 let saifWaleed = new Employee(1003, 'Safi Walid', 'Administration', 'Mid-Senior');
-saifWaleed.salary(saifWaleed.level);
+empArr.push(saifWaleed);
 
 let omarZaid = new Employee(1004, 'Omar Zaid', 'Develoment', 'Senior');
-omarZaid.salary(omarZaid.level);
+empArr.push(omarZaid);
 
 let ranaSaleh = new Employee(1005, 'Rana Saleh', 'Develoment', 'Junior');
-ranaSaleh.salary(ranaSaleh.level);
+empArr.push(ranaSaleh);
 
 let hadiAhmad = new Employee(1006, 'Hadi Ahmad', 'Fainance', 'Mid-Senior');
-hadiAhmad.salary(hadiAhmad.level);
+empArr.push(hadiAhmad);
+
+for(let i = 0; i < empArr.length; i++){
+    empArr[i].salary(empArr[i].level);
+    empArr[i].render();
+}
